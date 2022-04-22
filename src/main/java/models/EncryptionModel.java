@@ -77,7 +77,9 @@ public class EncryptionModel {
 
     public void encryptFile() {
         Path inputFilePath = Path.of(inputFile.getAbsolutePath());
-        File outputDecryptedFile = new File(outputDirectory + "/encrypted.txt");
+        System.out.println(inputFile.getName()
+        );
+        File outputDecryptedFile = new File(outputDirectory + "/sifriran" + inputFile.getName());
 
         Key secretKey;
         if(selectedEncryptionAlgorithm.name == EncryptionAlgorithmName.AES)

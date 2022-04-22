@@ -83,7 +83,7 @@ public class DecryptionModel {
 
     public void decryptFile(){
         Path inputFilePath = Path.of(inputFile.getAbsolutePath());
-        File outputFile = new File(outputDirectory + "/decrypted.txt");
+        File outputFile = new File(outputDirectory + "/desifriran" + inputFile.getName());
 
         Key key;
         if(selectedEncryptionAlgorithm.name == EncryptionAlgorithmName.AES)
