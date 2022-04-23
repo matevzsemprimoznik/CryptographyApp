@@ -30,14 +30,14 @@ public class EncryptionView extends JPanel {
         this.add(p);
 
         selectedFileLabel.setMinimumSize(new Dimension(500, 100));
-        JPanel firstRow = new FormRow("Datoteka za kriptiranje:", selectedFileLabel, selectFileButton).create();
-        this.add(firstRow);
+        JPanel selectFileRow = new FormRow("Datoteka za kriptiranje:", selectedFileLabel, selectFileButton);
+        this.add(selectFileRow);
 
-        JPanel secondRow = new FormRow("Lokacija za shranjevanje: ", selectedOutputDirectoryLabel, selectOutputDirectoryButton).create();
-        this.add(secondRow);
+        JPanel selectOutputDirectoryRow = new FormRow("Lokacija za shranjevanje: ", selectedOutputDirectoryLabel, selectOutputDirectoryButton);
+        this.add(selectOutputDirectoryRow);
 
-        JPanel thirdRow = new FormRow("Način šifriranja: ", selectAlgorithmJComboBox, null).create();
-        this.add(thirdRow);
+        JPanel selectAlgorithmRow = new FormRow("Način šifriranja: ", selectAlgorithmJComboBox);
+        this.add(selectAlgorithmRow);
 
         JPanel encryptButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         encryptButtonPanel.setBorder(new EmptyBorder(0, 0, 15, 0));
