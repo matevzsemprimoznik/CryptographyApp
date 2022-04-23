@@ -4,34 +4,31 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-public class FormRow{
-    private String labelText;
-    private JComponent component;
-    private JComponent rightHelper;
-
+public class FormRow extends JPanel{
     public FormRow(String labelText, JComponent component, JComponent rightHelper) {
-        this.labelText = labelText;
-        this.component = component;
-        this.rightHelper = rightHelper;
+        createFromRow(labelText, component, rightHelper);
     }
 
-    public JPanel create(){
-        JPanel panel = new JPanel();
-        panel.setMaximumSize(new Dimension(8000, 100));
-        BoxLayout bl = new BoxLayout(panel, BoxLayout.Y_AXIS);
-        panel.setLayout(bl);
+    public FormRow(String labelText, JComponent component) {
+        createFromRow(labelText, component, null);
+    }
+
+    private void createFromRow(String labelText, JComponent component, JComponent rightHelper){
+        this.setMaximumSize(new Dimension(8000, 100));
+        BoxLayout bl = new BoxLayout(this, BoxLayout.Y_AXIS);
+        this.setLayout(bl);
         JLabel label = new JLabel(labelText);
         label.setFont(new Font("Dialog", Font.BOLD, 14));
-        JPanel labelPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        labelPanel.setMaximumSize(new Dimension(8000, 20));
-        labelPanel.add(label);
-        JPanel inputPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        inputPanel.setBorder(new EmptyBorder(0, 0, 20, 0));
-        inputPanel.add(component);
+        JPanel labelthis = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        labelthis.setMaximumSize(new Dimension(8000, 20));
+        labelthis.add(label);
+        JPanel inputthis = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        inputthis.setBorder(new EmptyBorder(0, 0, 20, 0));
+        inputthis.add(component);
         if(rightHelper != null)
-            inputPanel.add(rightHelper);
-        panel.add(labelPanel);
-        panel.add(inputPanel);
-        return panel;
+            inputthis.add(rightHelper);
+        this.add(labelthis);
+        this.add(inputthis);
     }
+
 }
