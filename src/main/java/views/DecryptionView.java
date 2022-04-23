@@ -33,17 +33,17 @@ public class DecryptionView extends JPanel {
         this.add(p);
 
         selectedFileLabel.setMinimumSize(new Dimension(500, 100));
-        JPanel firstRow = new FormRow("Datoteka za dekriptiranje:", selectedFileLabel, selectFileButton).create();
-        this.add(firstRow);
+        JPanel selectFileRow = new FormRow("Datoteka za dekriptiranje:", selectedFileLabel, selectFileButton);
+        this.add(selectFileRow);
 
-        JPanel secondRow = new FormRow("Datoteka s klučem: ", selectedFileWithKeyLabel, selectFileWithKeyButton).create();
-        this.add(secondRow);
+        JPanel selectFileWithKeyRow = new FormRow("Datoteka s klučem: ", selectedFileWithKeyLabel, selectFileWithKeyButton);
+        this.add(selectFileWithKeyRow);
 
-        JPanel thirdRow = new FormRow("Lokacija za shranjevanje: ", selectedOutputDirectoryLabel, selectOutputDirectoryButton).create();
-        this.add(thirdRow);
+        JPanel selectOutputDirectoryRow = new FormRow("Lokacija za shranjevanje: ", selectedOutputDirectoryLabel, selectOutputDirectoryButton);
+        this.add(selectOutputDirectoryRow);
 
-        JPanel fourthRow = new FormRow("Način dešifriranja: ", selectAlgorithmJComboBox, null).create();
-        this.add(fourthRow);
+        JPanel selectAlgorithmRow = new FormRow("Način dešifriranja: ", selectAlgorithmJComboBox);
+        this.add(selectAlgorithmRow);
 
         JPanel decryptButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         decryptButtonPanel.setBorder(new EmptyBorder(0, 0, 15, 0));
