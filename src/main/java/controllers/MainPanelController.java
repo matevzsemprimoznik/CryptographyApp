@@ -24,5 +24,15 @@ public class MainPanelController {
             model.switchToPageForEncryption();
             view.setViewInsideContentPanel(model.getCurrentPanel());
         });
+
+        view.addNavigationSignButtonListener(e -> {
+            model.switchToPageForSigning();
+            view.setViewInsideContentPanel(model.getCurrentPanel());
+        });
+
+        view.addNavigationValidationButtonListener(e -> {
+            model.switchToPageForValidation();
+            view.setViewInsideContentPanel(model.getCurrentPanel());
+        });
     }
 }
